@@ -62,7 +62,7 @@ def train_and_evaluate_model(train_dir: str,
     create_history_plots(history, plot_filepath)
 
     model.save(model_path)
-    mlflow.autolog(log_models=False)
+    mlflow.keras.log_model(model, "model")
 
 
 def define_model() -> Model:
